@@ -24,7 +24,7 @@ In your working folder (your home folder, for example)
 
 .. code-block:: bash
 
-    git clone https://github.com/yevgenykuz/string_replacer.git
+    git clone https://github.com/yevgenykuz/string-replacer.git
 
 Configure and run
 -----------------
@@ -67,6 +67,6 @@ Authors
 
 License
 -------
-BSD-3-Clause - `LICENSE <https://github.com/yevgenykuz/string_replacer/blob/master/LICENSE>`_
+BSD-3-Clause - `LICENSE <https://github.com/yevgenykuz/string-replacer/blob/master/LICENSE>`_
 
 -----
