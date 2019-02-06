@@ -11,7 +11,7 @@ args_parser = argparse.ArgumentParser(description='Converts strings in files.')
 args_parser.add_argument('-p', dest='path', default='files',
                          help='The path to the directory that contains the files to scan (default is \'files\')')
 args_parser.add_argument('-e', dest='file_extension', default='',
-                         help='The extension of the files to scan for string replacement (scans everything by default')
+                         help='The extension of the files to scan for string replacement (scans everything by default)')
 args_parser.add_argument('-b', dest='string_list_before', default='before.txt',
                          help='The file that contains strings to convert (each string in its own line)')
 args_parser.add_argument('-a', dest='string_list_after', default='after.txt',

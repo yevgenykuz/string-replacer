@@ -51,7 +51,7 @@ Arguments
       -p PATH               The path to the directory that contains the files to
                             scan (default is 'files')
       -e FILE_EXTENSION     The extension of the files to scan for string
-                            replacement (scans everything by default
+                            replacement (scans everything by default)
       -b STRING_LIST_BEFORE
                             The file that contains strings to convert (each string
                             in its own line)
