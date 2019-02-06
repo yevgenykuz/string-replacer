@@ -1,7 +1,7 @@
 String Replacer
 ###############
 
-| This script Replaces strings in requested files.
+| This script replaces strings in requested files.
 | It expects 2 files with the same amount of lines to create the replacement "rules".
 | Each line from the first file will be replaced with the corresponding line from the second file.
 
@@ -28,10 +28,11 @@ In your working folder (your home folder, for example)
 
 Configure and run
 -----------------
-- Create your replacement "rules" by editing the provided "before.txt" and "after.txt" files. *You can point to your own files instead - see arguments*
-- Put the files you want to scan in the provided "files" folder. *You can point to your own folder instead - see arguments*
+- Create your replacement "rules" by editing the provided "before.txt" and "after.txt" files. You can point to your own files instead (*see arguments*)
+- Put the files you want to scan in the provided "files" folder. You can point to your own folder instead (*see arguments*)
 
 Run with:
+
 .. code-block:: bash
 
     python replace_strings_in_files.py
@@ -39,7 +40,7 @@ Run with:
 
 Arguments
 ---------
-.. code-block:: bash
+.. code-block::
 
     usage: replace_strings_in_files.py [-h] [-p PATH] [-e FILE_EXTENSION]
                                        [-b STRING_LIST_BEFORE]
