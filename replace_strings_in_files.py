@@ -50,7 +50,7 @@ class StringReplacer:
         log.info('Strings to replace to loaded from: {}'.format(self.string_list_after))
 
         # string_list_before and string_list_after must be have the same amount of strings:
-        if len(strings_before) is not len(strings_after):
+        if len(strings_before) != len(strings_after):
             log.fatal(
                 '\'{}\' and \'{}\' files must have the same amount of lines. Exiting...'.format(self.string_list_before,
                                                                                                 self.string_list_after))
