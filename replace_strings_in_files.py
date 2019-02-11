@@ -69,10 +69,18 @@ class StringReplacer:
             file_pattern = '*.{}'.format(self.file_extension)
             log.info('\'{}\' files in \'{}\' will be scanned.'.format(self.file_extension, self.path))
 
+        try:
+            os.mkdir(os.path.join(self.path, 'backup'))
+        except OSError:
+            log.fatal('Creation of backup directory failed. Exiting...'.format(self.path))
+            raise SystemExit(1)
+
         for file in glob.glob(os.path.join(self.path, file_pattern)):
+            if os.path.isdir(file):
+                continue
+
             log.info('Replacing strings in: {}'.format(file))
-            name, extension = os.path.splitext(file)
-            old_file = '{}.OLD.{}'.format(name, extension)
+            old_file = '{}.old'.format(os.path.join(self.path, 'backup', os.path.basename(file)))
             os.rename(file, old_file)
             with open(old_file, 'r') as f:
                 file_data = f.read()
