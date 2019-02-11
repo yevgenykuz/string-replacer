@@ -2,6 +2,7 @@ import argparse
 import glob
 import logging
 import os
+import shutil
 
 logging.basicConfig(format='[%(asctime)s] %(levelname)-8s | %(message)s',
                     datefmt='%d-%b-%Y %H:%M:%S', level=logging.INFO)
@@ -63,10 +64,10 @@ class StringReplacer:
         del strings_after
 
         if not self.file_extension:
-            file_pattern = '*'
+            file_pattern = '**/*'
             log.info('All files in \'{}\' will be scanned.'.format(self.path))
         else:
-            file_pattern = '*.{}'.format(self.file_extension)
+            file_pattern = '**/*.{}'.format(self.file_extension)
             log.info('\'{}\' files in \'{}\' will be scanned.'.format(self.file_extension, self.path))
 
         try:
@@ -75,13 +76,14 @@ class StringReplacer:
             log.fatal('Creation of backup directory failed. Exiting...'.format(self.path))
             raise SystemExit(1)
 
-        for file in glob.glob(os.path.join(self.path, file_pattern)):
+        for file in glob.glob(os.path.join(self.path, file_pattern), recursive=True):
             if os.path.isdir(file):
                 continue
 
             log.info('Replacing strings in: {}'.format(file))
-            old_file = '{}.old'.format(os.path.join(self.path, 'backup', os.path.basename(file)))
-            os.rename(file, old_file)
+            old_file = '{}.old'.format(os.path.join(self.path, 'backup', os.path.relpath(file, self.path)))
+            os.makedirs(os.path.split(os.path.relpath(old_file))[0], exist_ok=True)
+            shutil.move(file, old_file)
             with open(old_file, 'r') as f:
                 file_data = f.read()
 
