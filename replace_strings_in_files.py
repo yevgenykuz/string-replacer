@@ -87,7 +87,6 @@ class StringReplacer:
             with open(old_file, 'r') as f:
                 file_data = f.read()
 
-            file_data = file_data
             for before, after in strings.items():
                 file_data = file_data.replace(before, after)
 
