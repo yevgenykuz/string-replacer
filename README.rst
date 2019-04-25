@@ -67,6 +67,6 @@ Authors
 
 License
 -------
-BSD-3-Clause - `LICENSE <https://github.com/yevgenykuz/string-replacer/blob/master/LICENSE>`_
+`MIT License <https://github.com/yevgenykuz/string-replacer/blob/master/LICENSE>`_
 
 -----
