@@ -68,5 +68,3 @@ Authors
 License
 -------
 `MIT License <https://github.com/yevgenykuz/string-replacer/blob/master/LICENSE>`_
-
------
